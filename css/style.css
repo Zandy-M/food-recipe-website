@@ -1,0 +1,225 @@
+h1,
+h2,
+h3 {
+    font-family: 'Merienda', cursive;
+    font-style: normal;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+}
+
+.hamburger {
+    font-size: 24px;
+    cursor: pointer;
+    display: block;
+    margin-left: auto;
+    color: var(--accent);
+    z-index: 101;
+}
+
+/* Mode Toggle */
+#dark-mode-toggle {
+    background: none;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    color: var(--accent);
+    position: absolute;
+    right: 40px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 101;
+}
+
+/* Light Mode */
+:root {
+    --primary: #FFF8F0;
+    --secondary: #FFFFFF;
+    --accent: #E63946;
+    --accent-hover: #C72D38;
+    --bg-color: #FFFFFF;
+    --text-color: #333333;
+    --sub-text-color: #545454;
+}
+
+/* Dark Mode */
+.dark-mode {
+    --primary: #1D1D1D;
+    --secondary: #2C2C2C;
+    --accent: #F4A261;
+    --accent-hover: #D6823C;
+    --bg-color: #121212;
+    --text-color: #EDEDED;
+    --sub-text-color: #B0B0B0;
+}
+
+/* Menu */
+.menu {
+    list-style: none;
+    display: none;
+    flex-direction: column;
+    gap: 20px;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    background-color: var(--primary);
+    padding: 10px 0;
+    width: 200px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.menu li {
+    cursor: pointer;
+    padding: 10px 15px;
+}
+
+.nav-link {
+    color: var(--text-color);
+    font-size: 18px;
+    font-weight: 500;
+    display: block;
+    transition: color 0.3s ease-in-out;
+}
+
+.nav-link:hover {
+    color: var(--accent);
+}
+
+.menu.show {
+    display: flex;
+}
+
+
+/* Footer */
+footer .footer-container {
+    background-color: var(--secondary);
+    padding: 40px;
+    color: var(--text-color);
+    text-align: left;
+    position: relative;
+    z-index: 5;
+    width: 100%;
+}
+
+.footer-section h3 {
+    color: var(--accent);
+    text-shadow: 0 1px 2px var(--accent-hover);
+    font-size: 28px;
+    font-weight: 400;
+    margin-bottom: 20px;
+    transition: color 0.3s ease-in-out;
+}
+
+.footer-section h3:hover {
+    color: var(--accent-hover);
+}
+
+footer .footer-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+footer .footer-section ul li {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+footer .footer-section ul li a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-size: inherit;
+    transition: color 0.3s ease-in-out;
+}
+
+footer .footer-section ul li a:hover {
+    color: var(--accent);
+}
+
+footer .footer-bottom {
+    background-color: #000000;
+    text-align: center;
+    padding: 10px 0;
+    color: #fff;
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+
+footer .footer-section ul li a:focus {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+}
+
+
+/* Home Image */
+.home-image {
+    width: 100%;
+    height: 600px;
+    display: block;
+    margin-top: -500px;
+    position: fixed;
+}
+
+/* Logo Image */
+.logo-image {
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 500px;
+    z-index: 10;
+}
+
+/* Index Pgae */
+.container {
+    position: relative;
+    z-index: 10;
+    background: var(--primary);
+    padding: 20px;
+    margin-top: 500px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px var(--accent);
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: hidden;
+}
+
+.container h1 {
+    font-size: 40px;
+    font-weight: 800;
+    color: var(--accent);
+    margin-bottom: 25px;
+    letter-spacing: 1px;
+    line-height: 1.2;
+    text-align: center;
+}
+
+.container h2 {
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--sub-text-color);
+    line-height: 1.8;
+    margin-bottom: 30px;
+    text-align: center;
+    letter-spacing: 0.5px;
+}
