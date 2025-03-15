@@ -1,0 +1,6 @@
+RewriteEngine On
+
+# Ensure index.php receives the language parameter
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^([a-z]{2})/?$ index.php?lang=$1 [L,QSA]

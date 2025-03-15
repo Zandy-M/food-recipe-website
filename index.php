@@ -1,5 +1,6 @@
+<?php include('config.php'); ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="<?php echo $_SESSION['lang']; ?>" dir="<?php echo ($_SESSION['lang'] == 'ar') ? 'rtl' : 'ltr'; ?>">
 
 <head>
     <meta charset="UTF-8">
@@ -14,8 +15,8 @@
     <img class="logo-image" src="uploads/logo_image.png" alt="Logo Image">
 
     <div class="container">
-        <h1>CookItUp</h1>
-        <h2>Where passion meets flavor! Discover, create, and enjoy delicious recipes effortlessly.</h2>
+        <h1><?php echo $lang_data['container-heading']; ?></h1>
+        <h2><?php echo $lang_data['container-sub-heading']; ?></h2>
     </div>
     <?php require('includes/footer.php') ?>
 </body>

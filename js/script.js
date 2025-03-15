@@ -6,22 +6,34 @@ function toggleMenu() {
 document.addEventListener("DOMContentLoaded", () => {
     const toggleButton = document.getElementById("dark-mode-toggle");
     const body = document.body;
-
-    // Check if dark mode was previously enabled
+    let currentLang = window.location.pathname.split("/")[2] || "en";
+    const translations = {
+        en: { lightMode: "☀️ Light Mode", darkMode: "🌙 Dark Mode" },
+        ar: { lightMode: "☀️ وضع النهار", darkMode: "🌙 الوضع الليلي" }
+    };
+    function updateToggleText() {
+        if (body.classList.contains("dark-mode")) {
+            toggleButton.innerText = translations[currentLang].lightMode;
+        } else {
+            toggleButton.innerText = translations[currentLang].darkMode;
+        }
+    }
     if (localStorage.getItem("darkMode") === "enabled") {
         body.classList.add("dark-mode");
-        toggleButton.innerText = "☀️ Light Mode";
     }
 
+    updateToggleText();
     toggleButton.addEventListener("click", () => {
         body.classList.toggle("dark-mode");
-
         if (body.classList.contains("dark-mode")) {
             localStorage.setItem("darkMode", "enabled");
-            toggleButton.innerText = "☀️ Light Mode";
         } else {
             localStorage.setItem("darkMode", "disabled");
-            toggleButton.innerText = "🌙 Dark Mode";
         }
+        updateToggleText();
+    });
+    document.getElementById("languageSwitcher").addEventListener("change", function () {
+        currentLang = this.value;
+        updateToggleText();
     });
 });
